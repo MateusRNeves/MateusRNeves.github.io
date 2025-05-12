@@ -13,14 +13,6 @@
       --link-color: #007bff;
     }
 
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #f4f4f4;
-      --header-bg: #1f1f1f;
-      --header-text: #fff;
-      --link-color: #4ea8ff;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -31,7 +23,6 @@
       font-family: Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      transition: 0.3s;
     }
 
     header {
@@ -46,16 +37,6 @@
 
     header h2 {
       margin-bottom: 5px;
-    }
-
-    .theme-toggle {
-      margin-top: 10px;
-      padding: 5px 10px;
-      cursor: pointer;
-      background: var(--link-color);
-      border: none;
-      color: white;
-      border-radius: 5px;
     }
 
     main {
@@ -117,12 +98,11 @@
     }
   </style>
 </head>
-<body data-theme="light">
+<body>
   <header>
     <h2>Mateus da Rocha das Neves</h2>
     <p>Estudante de Engenharia de Software</p>
     <p>Desenvolvedor Front-end</p>
-    <button class="theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
   </header>
 
   <main>
@@ -154,13 +134,5 @@
   <footer>
     <p>&copy; 2025 Mateus da Rocha das Neves</p>
   </footer>
-
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const currentTheme = body.getAttribute('data-theme');
-      body.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
-    }
-  </script>
 </body>
-</html> 
+</html>
