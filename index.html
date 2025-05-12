@@ -3,31 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mim - Mateus da Rocha das Neves</title>
+  <title>Mateus da Rocha das Neves</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
+      background-color: #f4f4f4;
       color: #333;
     }
 
-    /* Imagem fixa no canto superior esquerdo */
-    .imagem-canto {
+    /* Container da imagem central */
+    .imagem-central {
       position: fixed;
-      top: 10px;
-      left: 10px;
-      width: 80px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .imagem-central img {
+      width: 200px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Esconde a imagem ao rolar */
+    .imagem-central.oculta {
+      opacity: 0;
+      visibility: hidden;
     }
 
     header {
       background: #333;
       color: #fff;
-      padding: 20px 0;
       text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     main {
@@ -40,15 +63,12 @@
       color: #333;
     }
 
-    section {
-      margin-bottom: 40px;
-    }
-
     footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 10px;
+      margin-top: 40px;
     }
 
     a {
@@ -58,16 +78,15 @@
 </head>
 <body>
 
-  <!-- Imagem fixa -->
-  <img 
-    class="imagem-canto" 
-    src="https://media-gru2-1.cdn.whatsapp.net/v/t61.24694-24/473400756_591467056999986_7050275827171232398_n.jpg?ccb=11-4&oh=01_Q5Aa1gGE5CNNh23TvEHGEl69TgtPji-s6csHbqbdAITPVhcd8A&oe=682F4B02&_nc_sid=5e03e0&_nc_cat=104" 
-    alt="Capoeirista sorrindo"
-  >
+  <!-- Imagem central no topo -->
+  <div class="imagem-central" id="imagemIntro">
+    <img src="https://media-gru2-1.cdn.whatsapp.net/v/t61.24694-24/473400756_591467056999986_7050275827171232398_n.jpg?ccb=11-4&oh=01_Q5Aa1gGE5CNNh23TvEHGEl69TgtPji-s6csHbqbdAITPVhcd8A&oe=682F4B02&_nc_sid=5e03e0&_nc_cat=104" alt="Mateus da Rocha das Neves">
+  </div>
 
+  <!-- Conteúdo principal -->
   <header>
-    <h2>Mateus da Rocha das Neves</h2>
-    <p>Estudante de Engenharia de Software</p><br>
+    <h1>Mateus da Rocha das Neves</h1>
+    <p>Estudante de Engenharia de Software</p>
     <p>Desenvolvedor Front-end</p>
   </header>
 
@@ -95,5 +114,17 @@
   <footer>
     <p>&copy; 2025 Mateus da Rocha das Neves</p>
   </footer>
+
+  <script>
+    // Esconde a imagem quando o usuário rolar a página
+    const imagemIntro = document.getElementById('imagemIntro');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        imagemIntro.classList.add('oculta');
+      } else {
+        imagemIntro.classList.remove('oculta');
+      }
+    });
+  </script>
 </body>
 </html>
