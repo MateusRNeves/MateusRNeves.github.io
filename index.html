@@ -1,166 +1,139 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre mim - Mateus da Rocha das Neves</title>
   <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --header-bg: #333;
+      --header-text: #fff;
+      --link-color: #007bff;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f4f4f4;
+      --header-bg: #1f1f1f;
+      --header-text: #fff;
+      --link-color: #4ea8ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
     }
+
     header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    main {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
+
+    header h2 {
+      margin-bottom: 5px;
     }
-    h1 {
+
+    .theme-toggle {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background: var(--link-color);
+      border: none;
       color: white;
+      border-radius: 5px;
     }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .profile-img {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-img img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--link-color);
+    }
+
     section {
       margin-bottom: 40px;
     }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
+
+    h2 {
+      margin-bottom: 10px;
     }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
     a {
-      color: #007bff;
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 20px 10px;
+      }
+
+      header, footer {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
   <header>
     <h2>Mateus da Rocha das Neves</h2>
-    <p>Estudante de Engenharia de Software</p><br>
-    <p>Desinvolvedor Front-end</p>
-  </header>  <main>
-    <section>
-      <h2>Sobre Mim</h2>
-      <p>Sou estudante de Engenharia de Software com foco em desenvolvimento Front-end. Atualmente, estou me dedicando aos estudos de HTML, CSS, JavaScript. Tenho interesse em construir soluções completas e funcionais, unindo design responsivo com lógica e estrutura de sistemas. Estou em constante evolução, buscando oportunidades para aplicar e ampliar meus conhecimentos na prática.</p>
-    </section><section>
-  <h2>Projetos</h2>
-  <ul>
-    <li>Site pessoal com GitHub Pages</li>
-    <li>Estudos sobre HTML, CSS e JavaScript</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Contato</h2>
-  <p>Email: mateusrd15@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/MateusRNeves" target="_blank">MateusRNeves</a></p>
-</section>
-
-  </main>  <footer>
-    <p>&copy; 2025 Mateus da Rocha das Neves</p>
-  </footer>
-</body>
-</html>Quero<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mateus da Rocha das Neves</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    /* Container da imagem central */
-    .imagem-central {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
-    }
-
-    .imagem-central img {
-      width: 200px;
-      border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    }
-
-    /* Esconde a imagem ao rolar */
-    .imagem-central.oculta {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    header {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      color: #333;
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 40px;
-    }
-
-    a {
-      color: #007bff;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Imagem central no topo -->
-  <div class="imagem-central" id="imagemIntro">
-    <img src="https://media-gru2-1.cdn.whatsapp.net/v/t61.24694-24/473400756_591467056999986_7050275827171232398_n.jpg?ccb=11-4&oh=01_Q5Aa1gGE5CNNh23TvEHGEl69TgtPji-s6csHbqbdAITPVhcd8A&oe=682F4B02&_nc_sid=5e03e0&_nc_cat=104" alt="Mateus da Rocha das Neves">
-  </div>
-
-  <!-- Conteúdo principal -->
-  <header>
-    <h1>Mateus da Rocha das Neves</h1>
     <p>Estudante de Engenharia de Software</p>
     <p>Desenvolvedor Front-end</p>
+    <button class="theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
   </header>
 
   <main>
+    <div class="profile-img">
+      <img src="https://media-gru2-1.cdn.whatsapp.net/v/t61.24694-24/473400756_591467056999986_7050275827171232398_n.jpg?ccb=11-4&oh=01_Q5Aa1gGE5CNNh23TvEHGEl69TgtPji-s6csHbqbdAITPVhcd8A&oe=682F4B02&_nc_sid=5e03e0&_nc_cat=104" 
+           alt="Foto de Mateus da Rocha das Neves">
+    </div>
+
     <section>
       <h2>Sobre Mim</h2>
-      <p>Sou estudante de Engenharia de Software com foco em desenvolvimento Front-end. Atualmente, estou me dedicando aos estudos de HTML, CSS, JavaScript. Tenho interesse em construir soluções completas e funcionais, unindo design responsivo com lógica e estrutura de sistemas. Estou em constante evolução, buscando oportunidades para aplicar e ampliar meus conhecimentos na prática.</p>
+      <p>Sou estudante de Engenharia de Software com foco em desenvolvimento Front-end. Atualmente, estou me dedicando aos estudos de HTML, CSS e JavaScript. Tenho interesse em construir soluções completas e funcionais, unindo design responsivo com lógica e estrutura de sistemas. Estou em constante evolução, buscando oportunidades para aplicar e ampliar meus conhecimentos na prática.</p>
     </section>
 
     <section>
@@ -183,216 +156,11 @@
   </footer>
 
   <script>
-    // Esconde a imagem quando o usuário rolar a página
-    const imagemIntro = document.getElementById('imagemIntro');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        imagemIntro.classList.add('oculta');
-      } else {
-        imagemIntro.classList.remove('oculta');
-      }
-    });
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      body.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+    }
   </script>
-</body>
-</html></html><html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mim - Mateus da Rocha das Neves</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      color: white;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    a {
-      color: #007bff;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h2>Mateus da Rocha das Neves</h2>
-    <p>Estudante de Engenharia de Software</p><br>
-    <p>Desinvolvedor Front-end</p>
-  </header>  <main>
-    <section>
-      <h2>Sobre Mim</h2>
-      <p>Sou estudante de Engenharia de Software com foco em desenvolvimento Front-end. Atualmente, estou me dedicando aos estudos de HTML, CSS, JavaScript. Tenho interesse em construir soluções completas e funcionais, unindo design responsivo com lógica e estrutura de sistemas. Estou em constante evolução, buscando oportunidades para aplicar e ampliar meus conhecimentos na prática.</p>
-    </section><section>
-  <h2>Projetos</h2>
-  <ul>
-    <li>Site pessoal com GitHub Pages</li>
-    <li>Estudos sobre HTML, CSS e JavaScript</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Contato</h2>
-  <p>Email: mateusrd15@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/MateusRNeves" target="_blank">MateusRNeves</a></p>
-</section>
-
-  </main>  <footer>
-    <p>&copy; 2025 Mateus da Rocha das Neves</p>
-  </footer>
-</body>
-</html>Quero</html><html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mim - Mateus da Rocha das Neves</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      color: white;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    a {
-      color: #007bff;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h2>Mateus da Rocha das Neves</h2>
-    <p>Estudante de Engenharia de Software</p><br>
-    <p>Desinvolvedor Front-end</p>
-  </header>  <main>
-    <section>
-      <h2>Sobre Mim</h2>
-      <p>Sou estudante de Engenharia de Software com foco em desenvolvimento Front-end. Atualmente, estou me dedicando aos estudos de HTML, CSS, JavaScript. Tenho interesse em construir soluções completas e funcionais, unindo design responsivo com lógica e estrutura de sistemas. Estou em constante evolução, buscando oportunidades para aplicar e ampliar meus conhecimentos na prática.</p>
-    </section><section>
-  <h2>Projetos</h2>
-  <ul>
-    <li>Site pessoal com GitHub Pages</li>
-    <li>Estudos sobre HTML, CSS e JavaScript</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Contato</h2>
-  <p>Email: mateusrd15@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/MateusRNeves" target="_blank">MateusRNeves</a></p>
-</section>
-
-  </main>  <footer>
-    <p>&copy; 2025 Mateus da Rocha das Neves</p>
-  </footer>
-</body>
-</html>Quero</html><html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mim - Mateus da Rocha das Neves</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      color: white;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    a {
-      color: #007bff;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h2>Mateus da Rocha das Neves</h2>
-    <p>Estudante de Engenharia de Software</p><br>
-    <p>Desinvolvedor Front-end</p>
-  </header>  <main>
-    <section>
-      <h2>Sobre Mim</h2>
-      <p>Sou estudante de Engenharia de Software com foco em desenvolvimento Front-end. Atualmente, estou me dedicando aos estudos de HTML, CSS, JavaScript. Tenho interesse em construir soluções completas e funcionais, unindo design responsivo com lógica e estrutura de sistemas. Estou em constante evolução, buscando oportunidades para aplicar e ampliar meus conhecimentos na prática.</p>
-    </section><section>
-  <h2>Projetos</h2>
-  <ul>
-    <li>Site pessoal com GitHub Pages</li>
-    <li>Estudos sobre HTML, CSS e JavaScript</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Contato</h2>
-  <p>Email: mateusrd15@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/MateusRNeves" target="_blank">MateusRNeves</a></p>
-</section>
-
-  </main>  <footer>
-    <p>&copy; 2025 Mateus da Rocha das Neves</p>
-  </footer>
 </body>
 </html> 
